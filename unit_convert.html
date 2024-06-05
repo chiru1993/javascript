@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Unit Converter</title>
+    <link rel="stylesheet" href="unit_convert.css">
+</head>
+<body>
+    <div>
+    <h2>Length Unit Converter</h2>
+    
+    
+    <input type="number" id="inputUnit">
+    <select id="inputSelect">
+        <option value="meter">Meter</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="inch">Inch</option>
+        <option value="foot">Foot</option>
+        <option value="yard">Yard</option>
+        <option value="mile">Mile</option>
+    </select> <br><br>
+    
+    
+    <input type="number" id="outputUnit">
+    <select id="outputSelect">
+        <option value="meter">Meter</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="inch">Inch</option>
+        <option value="foot">Foot</option>
+        <option value="yard">Yard</option>
+        <option value="mile">Mile</option>
+    </select> <br><br>
+    
+    <button onclick="convert()">Convert</button>
+</div>
+    <script>
+        function convert() {
+            let inputUnit = document.getElementById("inputUnit").value;
+            let inputSelect = document.getElementById("inputSelect").value;
+            let outputSelect = document.getElementById("outputSelect").value;
+            // let outputUnit;
+
+            // Convert input to meters
+            switch(inputSelect) {
+                case "meter":
+                    inputUnit *= 1;
+                    break;
+                case "centimeter":
+                    inputUnit *= 0.01;
+                    break;
+                case "kilometer":
+                    inputUnit *= 1000;
+                    break;
+                case "inch":
+                    inputUnit *= 0.0254;
+                    break;
+                case "foot":
+                    inputUnit *= 0.3048;
+                    break;
+                case "yard":
+                    inputUnit *= 0.9144;
+                    break;
+                case "mile":
+                    inputUnit *= 1609.34;
+                    break;
+            }
+
+            // Convert meters to output unit
+            switch(outputSelect) {
+                case "meter":
+                    outputUnit = inputUnit / 1;
+                    break;
+                case "centimeter":
+                    outputUnit = inputUnit / 0.01;
+                    break;
+                case "kilometer":
+                    outputUnit = inputUnit / 1000;
+                    break;
+                case "inch":
+                    outputUnit = inputUnit / 0.0254;
+                    break;
+                case "foot":
+                    outputUnit = inputUnit / 0.3048;
+                    break;
+                case "yard":
+                    outputUnit = inputUnit / 0.9144;
+                    break;
+                case "mile":
+                    outputUnit = inputUnit / 1609.34;
+                    break;
+            }
+
+            document.getElementById("outputUnit").value = outputUnit.toFixed(2);
+        }
+    </script>
+</body>
+</html>

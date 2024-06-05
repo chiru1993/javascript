@@ -1,0 +1,27 @@
+body{
+    background-color: aqua;
+    text-align: center;
+    padding-top: 15%;
+}
+/* div{
+    height: 500px;
+    width: 800px;
+    border: 5px solod black;
+} */
+button{
+    height: 30px;
+    width: 100px;
+    color: rgb(235, 229, 229);
+    background-color: rgb(140, 148, 205);
+}
+input{
+    background-color: yellow;
+    height: 30px;
+}
+option{
+    background-color: lightcoral;
+}
+select{
+    background-color: chocolate;
+    height: 30px;
+}
